@@ -1,4 +1,4 @@
-package dominio;
+package introducaometodos.dominio;
 public class Pessoa {
     private String nome;
     private int idade;

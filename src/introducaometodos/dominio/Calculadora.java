@@ -1,4 +1,4 @@
-package dominio;
+package introducaometodos.dominio;
 
 public class Calculadora {
     public void somaDoisNumeros() { //O void é usado pra dizer que o método nao retorna nada, ele tem apenas uma saída.

@@ -1,6 +1,6 @@
-package test;
+package introducaometodos.test;
 
-import dominio.Calculadora;
+import introducaometodos.dominio.Calculadora;
 
 public class calculadoraTest01 {
     public static void main(String[] args) {

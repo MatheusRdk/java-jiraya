@@ -1,6 +1,6 @@
-package test;
+package introducaometodos.test;
 
-import dominio.Funcionario;
+import introducaometodos.dominio.Funcionario;
 
 public class funcionarioTest01 {
     public static void main(String[] args) {

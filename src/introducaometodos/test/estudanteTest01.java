@@ -1,7 +1,7 @@
-package test;
+package introducaometodos.test;
 
-import dominio.Estudante;
-import dominio.Imprime;
+import introducaometodos.dominio.Estudante;
+import introducaometodos.dominio.Imprime;
 
 public class estudanteTest01 {
     public static void main(String[] args) {

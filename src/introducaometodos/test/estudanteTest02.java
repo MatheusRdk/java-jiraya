@@ -1,8 +1,8 @@
-package test;
+package introducaometodos.test;
 
-import dominio.Estudante;
 //Estudante sem usar a classe Imprime, mas o método do próprio estudante.
 
+import introducaometodos.dominio.Estudante;
 
 public class estudanteTest02 {
     public static void main(String[] args) {

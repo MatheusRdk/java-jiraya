@@ -1,4 +1,5 @@
-package dominio;
+package introducaometodos.dominio;
+
 public class Imprime {
 
 

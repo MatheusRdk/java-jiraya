@@ -1,6 +1,6 @@
-package test;
+package introducaometodos.test;
 
-import dominio.Pessoa;
+import introducaometodos.dominio.Pessoa;
 
 public class PessoaTest01 {
     public static void main(String[] args) {
