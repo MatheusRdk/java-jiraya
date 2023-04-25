@@ -1,4 +1,4 @@
-package dominio;
+package introducaoclasses.dominio;
 
 public class Carro {
     public String nome;

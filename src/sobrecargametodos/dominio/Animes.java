@@ -1,4 +1,4 @@
-package dominio;
+package sobrecargametodos.dominio;
 
 public class Animes {
     private String nome;

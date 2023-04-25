@@ -1,6 +1,6 @@
-package test;
+package introducaoclasses.test;
 
-import dominio.Carro;
+import introducaoclasses.dominio.Carro;
 
 public class CarroTest01 {
     public static void main(String[] args) {

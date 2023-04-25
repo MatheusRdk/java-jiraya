@@ -1,6 +1,7 @@
-package test;
+package sobrecargametodos.test;
 
-import dominio.Animes;
+import sobrecargametodos.dominio.Animes;
+
 public class AnimeTest01 {
     public static void main(String[] args) {
         Animes anime = new Animes();

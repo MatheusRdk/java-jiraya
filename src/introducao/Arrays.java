@@ -1,3 +1,5 @@
+package introducao;
+
 public class Arrays {
     public static void main(String[] args) {
         //Valores padrões para inicialização de variáveis vazias, por exemplo int numero;

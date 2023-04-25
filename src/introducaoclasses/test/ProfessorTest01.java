@@ -1,6 +1,6 @@
-package test;
+package introducaoclasses.test;
 
-import dominio.Professor;
+import introducaoclasses.dominio.Professor;
 
 public class ProfessorTest01 {
     public static void main(String[] args) {
