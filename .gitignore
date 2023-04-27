@@ -2,6 +2,9 @@
 out/
 .idea/dictionaries
 .idea/inspectionProfiles
+renamed_directory/
+pasta/
+home/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
