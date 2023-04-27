@@ -23,8 +23,8 @@ public class BasicFileAttributesTest02 {
 
         //BasicFileAttributesView
         BasicFileAttributeView fileAttributeView = Files.getFileAttributeView(path, BasicFileAttributeView.class);
-        FileTime newCreationTime = FileTime.fromMillis(System.currentTimeMillis());
-        fileAttributeView.setTimes(lastModifiedTime, newCreationTime, creationTime);
+        FileTime newLastAccess = FileTime.fromMillis(System.currentTimeMillis());
+        fileAttributeView.setTimes(lastModifiedTime, newLastAccess, creationTime);
 
         creationTime = fileAttributeView.readAttributes().creationTime();
         lastModifiedTime = fileAttributeView.readAttributes().lastModifiedTime();
