@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 
-class ListAllFiles extends SimpleFileVisitor<Path>{
+class listJavaFiles extends SimpleFileVisitor<Path>{
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs){
         if (file.getFileName().toString().endsWith(".java")){
@@ -18,7 +18,7 @@ class ListAllFiles extends SimpleFileVisitor<Path>{
 public class SimpleFileVisitorTest01 {
     public static void main(String[] args) throws IOException {
         Path root = Paths.get(".");
-        Files.walkFileTree(root, new ListAllFiles());
+        Files.walkFileTree(root, new listJavaFiles());   //O simplefilevisitor vai definir o que vc quer fazer dentro da pasta. Ex.: printar todos arquivos q terminam com .java
 
     }
 }
