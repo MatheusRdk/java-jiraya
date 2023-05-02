@@ -19,7 +19,7 @@ public class Aluno implements Serializable {//Para conseguir serializar o objeto
         this.password = password;
     }
 
-    @Serial
+    @Serial   //Essa anotação só passou a existir depois do Java 14.
     private void writeObject(ObjectOutputStream oos) {
         try {
             oos.defaultWriteObject();
