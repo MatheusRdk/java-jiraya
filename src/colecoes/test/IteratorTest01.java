@@ -8,7 +8,7 @@ import java.util.List;
 
 public class IteratorTest01 {
     public static void main(String[] args) {
-        List<Manga> mangas = new ArrayList<>(6);
+        List<Manga> mangas = new ArrayList<>(6); //Vc pode usar tambem o LinkedList, e obter o mesmo resultado, porém a performance para DELETAR é melhor.
         mangas.add(new Manga(5L, "Vc conhece PICOLO?", 668.2, 0));
         mangas.add(new Manga(1L, "Narruto", 245.3, 5));
         mangas.add(new Manga(7L, "Magin Bu", 622, 0));
@@ -29,6 +29,9 @@ public class IteratorTest01 {
         //Esse manga dentro dos parenteses é um nome dado pros valores dentro de mangas, igual vc faz no loop Mangas manga : mangas.
         mangas.removeIf(manga -> manga.getQuantidade() == 0);
         System.out.println(mangas);   //Dessa forma o resultado é o mesmo, e se vc verificar o removeIf vai perceber que ele usa o mesmo método do iterator usado acima.
+
+
+        //O LinkedList citado acima tem performance melhor para deletar, pois a diferença para o ArrayList é que os objetos no Linked tem conhecimento do objeto anterior e do próximo.
 
     }
 }
