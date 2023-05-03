@@ -6,6 +6,7 @@ public class Manga implements Comparable<Manga> { //Para dar certo o sort, tem q
     private Long id;
     private String nome;
     private double preco;
+    private int quantidade;
 
     public Manga(Long id, String nome, double preco) {
         Objects.requireNonNull(nome, "Nome não pode ser nulo"); //Joga uma excessão caso esses forem nulos. Pode colocar ou não uma mensagem.
@@ -13,6 +14,11 @@ public class Manga implements Comparable<Manga> { //Para dar certo o sort, tem q
         this.id = id;
         this.nome = nome;
         this.preco = preco;
+    }
+
+    public Manga(Long id, String nome, double preco, int quantidade) {
+        this(id, nome, preco);
+        this.quantidade = quantidade;
     }
 
     //-------------------------O IntelliJ tem uma forma de criar o equals e o hashCode já implementada------------------------------------
@@ -31,13 +37,23 @@ public class Manga implements Comparable<Manga> { //Para dar certo o sort, tem q
     }
     //------------------------------------------------------------------------------------------------------------------------------------
 
+
     @Override
     public String toString() {
         return "Manga{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", preco=" + preco +
+                ", quantidade=" + quantidade +
                 '}';
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public Long getId() {
