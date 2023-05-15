@@ -43,6 +43,7 @@ public class Members {  //O NOTIFY E O WAIT PRECISAM ESTA EM ALGO SYNCHRONIZED, 
         open = false;
         synchronized (this.emails){
             System.out.println(Thread.currentThread().getName() + " notificando todo mundo que não estamos mais pegando emails.");
+            this.emails.notifyAll();
 
         }
     }
