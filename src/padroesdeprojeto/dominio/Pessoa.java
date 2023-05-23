@@ -34,6 +34,10 @@ public class Pessoa {
         public PessoaBuilder() {
         }
 
+        public static PessoaBuilder builder() {
+            return new PessoaBuilder();
+        }
+
         public PessoaBuilder firstName(String firstName) {
             this.firstName = firstName;
             return this;
@@ -57,6 +61,10 @@ public class Pessoa {
         public Pessoa build() {    //Vc precisa criar esse metodo build nesse padrao, pois ele que vai retornar uma Pessoa e nao mais um PessoaBuilder
             return new Pessoa(firstName, lastName, userName, email);
         }
+    }
+
+    public String getFirstName() {
+        return firstName;
     }
 }
 
