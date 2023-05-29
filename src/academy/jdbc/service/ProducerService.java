@@ -24,6 +24,11 @@ public class ProducerService { //Essa é a camada de serviço, ela serve pra ser
         ProducerRepository.update(producer);
     }
 
+    public static void updatePreparedStatement(Producer producer){
+        requiredValidId(producer.getId());
+        ProducerRepository.updatePreparedStatement(producer);
+    }
+
     public static List<Producer> findAll(){
         return ProducerRepository.findAll();
     }
@@ -32,12 +37,31 @@ public class ProducerService { //Essa é a camada de serviço, ela serve pra ser
         return ProducerRepository.findByName(name);
     }
 
+    public static List<Producer> findByNamePreparedStatement(String name){
+        return ProducerRepository.findByNamePreparedStatement(name);
+    }
+
     public static void showProducerMetaData(){
         ProducerRepository.showProducerMetaData();
     }
 
     public static void showDriverMetaData(){
         ProducerRepository.showDriverMetaData();
+    }
+
+    public static List<Producer> findByNameAndUpdateToUppercase(String name){
+        return ProducerRepository.findByNameAndUpdateToUppercase(name);
+    }
+
+    public static List<Producer> findByNameAndInsertWhenNotFound(String name){
+        return ProducerRepository.findByNameAndInsertWhenNotFound(name);
+    }
+    public static void findByNameAndDelete(String name){
+        ProducerRepository.findByNameAndDelete(name);
+    }
+
+    public static void showTypeScrollWorking(){
+        ProducerRepository.showTypeScrollWorking();
     }
 
     private static void requiredValidId(Integer id){
