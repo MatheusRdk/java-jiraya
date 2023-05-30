@@ -22,8 +22,36 @@ public class ProducerRepository {
             log.error("Error while trying to insert producer '{}'.", producer.getName(), e);
         }
     }
+    public static void saveTransaction(List<Producer> producers) {
+        try (Connection conn = ConnectionFactory.getConnection()){
+            conn.setAutoCommit(false);
+            preparedStatementSaveTransaction(conn, producers);
+            conn.commit();
+            conn.setAutoCommit(true); //Tem que voltar pra true depois de deixar false.
+        } catch (SQLException e) {
+            log.error("Error while trying to update producers '{}'.", producers, e);
+        }
+    }
 
-    ;
+    private static void preparedStatementSaveTransaction(Connection conn, List<Producer> producers) throws SQLException {
+        String sql = "INSERT INTO `anime_store`.`producer` (`name`) VALUES (?);";
+        boolean shouldRollback = false;
+        for (Producer p : producers){
+            try(PreparedStatement ps = conn.prepareStatement(sql)){
+                log.info("Saving producer '{}'.", p.getName());
+                ps.setString(1, p.getName());
+                ps.execute();
+            } catch (SQLException e){
+                e.printStackTrace();
+                shouldRollback = true;
+            }
+        }
+        if (shouldRollback) {
+            conn.rollback(); //Isso tudo do rollback faz o codigo todo parar em caso de excecao, e nao somente o que deu erro nao funcionar. Ai nao acontece nada no banco de dados.
+            //Se vc nao tivesse feito isso, por exemplo se desse erro em 1 dos producers, os outros estariam indo pro bd igual.
+            log.warn("Transaction is going to be rollback.");
+        }
+    }
 
     public static void delete(int id) {
         String sql = "DELETE FROM `anime_store`.`producer` WHERE (`id` = '%d');".formatted(id);

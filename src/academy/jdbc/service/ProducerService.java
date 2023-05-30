@@ -14,6 +14,11 @@ public class ProducerService { //Essa é a camada de serviço, ela serve pra ser
         ProducerRepository.save(producer);
     }
 
+    public static void saveTransaction(List<Producer> producers) {
+        ProducerRepository.saveTransaction(producers);
+    }
+
+
     public static void delete(Integer id){
         requiredValidId(id);
         ProducerRepository.delete(id);
