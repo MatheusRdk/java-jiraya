@@ -28,6 +28,8 @@ public class ConnectionFactoryTest01 {
 //        //Apos arrumar todo o metodo com o preparedstatement o sql injection nao funciona mais.
 //
 //        log.info("Producers found: {}", byNamePreparedStatement);
-        ProducerService.updatePreparedStatement(producerToUpdate);
+//        ProducerService.updatePreparedStatement(producerToUpdate);
+        List<Producer> producers = ProducerService.findByNameCallableStatement("iii");
+        log.info("Producers found: {}", producers);
     }
 }
